@@ -1,0 +1,21 @@
+import FreeCAD
+import Part
+
+# Define o tamanho do cubo
+size = 10
+
+# Cria um novo documento
+doc = FreeCAD.newDocument("CuboSemInterface")
+
+# Cria o cubo
+cubo = Part.makeBox(size, size, size)
+
+# Adiciona o cubo ao documento
+obj = doc.addObject("Part::Feature", "MeuCubo")
+obj.Shape = cubo
+
+# Salva o arquivo
+doc_path = "C:/Users/degli/OneDrive/Área de Trabalho/pasta do projeto/cubo.FCStd"
+doc.saveAs(doc_path)
+
+print(f"Cubo criado com sucesso em: {doc_path}")
